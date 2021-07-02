@@ -169,25 +169,25 @@ Java_com_benben_deadlockmonitordemo_DeadLockCheck_getBlockThreadNativeId(JNIEnv 
 弹异常框、Toast、数据上报等等
 
 ```log
-2021-07-03 01:23:18.976 18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~start~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-2021-07-03 01:23:18.976 18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: waitThread = lock2 > lock3
-2021-07-03 01:23:18.976 18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: blockedThread = lock1 > lock2
-2021-07-03 01:23:18.977 18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: lock1 > lock2 stack.
+18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~start~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: waitThread = lock2 > lock3
+18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: blockedThread = lock1 > lock2
+18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: lock1 > lock2 stack.
     com.benben.deadlockmonitordemo.DeadLockUtil$createDeadLock$1.invoke(DeadLockUtil.kt:28)
     com.benben.deadlockmonitordemo.DeadLockUtil$createDeadLock$1.invoke(DeadLockUtil.kt:23)
     kotlin.concurrent.ThreadsKt$thread$thread$1.run(Thread.kt:30)
-2021-07-03 01:23:18.977 18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: waitThread = lock3 > lock1
-2021-07-03 01:23:18.977 18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: blockedThread = lock2 > lock3
-2021-07-03 01:23:18.977 18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: lock2 > lock3 stack.
+18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: waitThread = lock3 > lock1
+18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: blockedThread = lock2 > lock3
+18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: lock2 > lock3 stack.
     com.benben.deadlockmonitordemo.DeadLockUtil$createDeadLock$2.invoke(DeadLockUtil.kt:39)
     com.benben.deadlockmonitordemo.DeadLockUtil$createDeadLock$2.invoke(DeadLockUtil.kt:34)
     kotlin.concurrent.ThreadsKt$thread$thread$1.run(Thread.kt:30)
-2021-07-03 01:23:18.977 18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: waitThread = lock1 > lock2
-2021-07-03 01:23:18.977 18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: blockedThread = lock3 > lock1
-2021-07-03 01:23:18.978 18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: lock3 > lock1 stack.
+18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: waitThread = lock1 > lock2
+18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: blockedThread = lock3 > lock1
+18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: lock3 > lock1 stack.
     com.benben.deadlockmonitordemo.DeadLockUtil$createDeadLock$3.invoke(DeadLockUtil.kt:50)
     com.benben.deadlockmonitordemo.DeadLockUtil$createDeadLock$3.invoke(DeadLockUtil.kt:45)
     kotlin.concurrent.ThreadsKt$thread$thread$1.run(Thread.kt:30)
-2021-07-03 01:23:18.978 18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~end~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~end~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ```
 
