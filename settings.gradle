@@ -1,0 +1,2 @@
+rootProject.name = "DeadLockMonitorDemo"
+include ':app'
