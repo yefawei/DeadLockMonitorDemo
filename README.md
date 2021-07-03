@@ -1,4 +1,6 @@
-# 死锁监控
+> 在日常开发中，当出现锁被长期持有或者出现死锁，造成流程无法正常执行，甚至产生ANR，这时候就需要获取被阻塞的线程和持有锁的线程，该 demo 展示了如何获取被阻塞的线程和持有锁的线程相关调用链
+
+# 获取锁调用链
 
 需要知道当前线程在等待那个锁，以及这个锁被那个线程持有，然后把发生死锁的线程堆栈信息搜集起来
 
@@ -61,7 +63,9 @@ for (thread in allThreads) {
 涉及的相关 Native 层动态库为 `libart.so`
 
 该库路径：
+
 `Android 9.0` 以前：`/system/lib/libart.so`
+
 `Android 10.0` 起：`/system/apex/com.android.adbd/lib/libart.so`
 
 ```c++
@@ -155,7 +159,7 @@ Java_com_benben_deadlockmonitordemo_DeadLockCheck_getBlockThreadNativeId(JNIEnv 
 
 通过以上两步，就能得到一直不释放的线程id
 
-##### 六、死锁分组并打印调用栈
+##### 六、锁分组并打印调用栈
 
 我们已经找的阻塞的线程和持有锁的线程，这里涉及到一个关系链：
 
@@ -190,4 +194,8 @@ Java_com_benben_deadlockmonitordemo_DeadLockCheck_getBlockThreadNativeId(JNIEnv 
     kotlin.concurrent.ThreadsKt$thread$thread$1.run(Thread.kt:30)
 18752-18752/com.benben.deadlockmonitordemo E/DL_DeadLockCheck: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~end~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ```
+
+#### 注意事项
+
+由于时通过动态链接的形式获取的线程信息，需要考虑系统兼容性，如鸿蒙系统、各个厂家的系统、不同安卓版本的系统等等，在线上使用可以只针对已经稳定测试过的系统开放
 
